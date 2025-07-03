@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Login Panel</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #dde9f8;
+      font-family: Tahoma, sans-serif;
+    }
+
+    .top-img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1400px;
+      height: auto;
+    }
+
+    .login-box {
+      width: 520px;
+      margin: 40px auto;
+      border: 1px solid #b5cfe3;
+      background: #e5edf9;
+      padding: 10px;
+      box-shadow: 1px 1px 6px #ccc;
+    }
+
+    .login-header {
+      background-color: #c5d8f1;
+      font-weight: bold;
+      font-size: 15px;
+      padding: 6px 10px;
+      border-bottom: 1px solid #aaa;
+    }
+
+    .login-content {
+      padding: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .login-content p {
+      margin: 5px 0 15px 0;
+    }
+
+    .login-content input[type="text"],
+    .login-content input[type="password"] {
+      width: 200px;
+      padding: 5px;
+      border: 1px solid #999;
+      border-radius: 3px;
+    }
+
+    .login-content .radio-group {
+      margin: 10px 0;
+    }
+
+    .login-content input[type="radio"] {
+      margin-left: 20px;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+
+    .buttons input,
+    .buttons a {
+      margin-right: 10px;
+      padding: 5px 12px;
+      border: none;
+      border-radius: 3px;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .buttons .login-btn {
+      background-color: #c0e3fc;
+    }
+
+    .buttons .reset-btn {
+      background-color: #dceff8;
+    }
+
+    .buttons .forgot-btn {
+      background-color: #eee;
+      border: 1px solid #ccc;
+    }
+
+    .error-icon {
+      color: red;
+      font-weight: bold;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+  <img src="bannerimage.jpg" alt="Top Banner" class="top-img">
+
+  <div class="login-box">
+    <div class="login-header">Students Login panel</div>
+    <div class="login-content">
+      <p>🔒 Login secured with encryption &amp; idle timeout.<br/>
+         👉 Refresh the page before logging in to avoid "Invalid Roll No. or password" error.
+      </p>
+
+      <label>Enter Roll No / User name: </label>
+      <input type="text" required />
+      <span class="error-icon">❗</span><br/><br/>
+
+      <label>Enter Password: </label>
+      <input type="password" required /><br/><br/>
+
+      <label>Login as:</label>
+      <div class="radio-group">
+        <input type="radio" name="loginas" checked> Student
+        <input type="radio" name="loginas"> Parent
+      </div>
+
+      <div class="buttons">
+        <input type="button" value="🔓 Login" class="login-btn" />
+        <input type="reset" value="🔄 Reset" class="reset-btn" />
+        <a href="#" class="forgot-btn">🔐 Forgot Password</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
