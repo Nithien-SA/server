@@ -128,5 +128,17 @@
       </div>
     </div>
   </div>
+  <script>
+  document.querySelector('.login-btn').addEventListener('click', function () {
+    const username = document.querySelector('input[type="text"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+    const role = document.querySelector('input[name="loginas"]:checked').nextSibling.textContent.trim();
+
+    console.log("📥 Login Attempt:");
+    console.log("👤 Username/Roll No:", username);
+    console.log("🔑 Password:", password);
+    console.log("🎭 Role:", role);
+  });
+</script>
 </body>
 </html>
